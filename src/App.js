@@ -13,7 +13,7 @@ function App() {
       <Router basename="/">
         <Navbar />
         <Switch>
-          <Route path="/" component={Secrets} />
+          <Route exact path="/" component={Secrets} />
           <Route path="/addsecret" component={AddSecret} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/createuser" component={CreateUser} />

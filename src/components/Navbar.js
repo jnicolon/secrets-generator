@@ -14,6 +14,12 @@ function Navbar() {
         <li>
           <Link to="/favorites">Favorites</Link>
         </li>
+        <li>
+          <Link to="/createuser">Create User</Link>
+        </li>
+        <li>
+          <Link to="/login">Log In</Link>
+        </li>
       </ul>
     </div>
   );
