@@ -1,7 +1,9 @@
 @import "./css//varibable.scss";
 @import "./css//random.scss";
 @import "./css/navbar.scss";
+@import "./css/footer.scss";
 @import "./css//postcard.scss";
+@import "./css/addSecret.scss";
 
 * {
   margin: 0;
@@ -17,7 +19,7 @@ body {
 
 .app {
   width: 100vw;
-
+  min-height: 100vh;
   background-color: black;
 
   // background-image: url(../src/imgs/background.jpg);
@@ -37,6 +39,17 @@ li {
 a {
   text-decoration: none;
   &:visited {
+    text-decoration: none;
     color: unset;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  &focus {
+    border: none;
+    outline: none;
   }
 }

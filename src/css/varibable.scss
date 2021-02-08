@@ -1,6 +1,15 @@
 $white: rgb(233, 233, 233);
 $primary-font: "Open Sans", sans-serif;
 
+@mixin main-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  font-family: $primary-font;
+}
+
 // font-colors
 $font-color1: black;
 $font-color2: rgb(97, 97, 97);

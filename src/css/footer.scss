@@ -1,0 +1,14 @@
+.footer-container {
+  margin: auto;
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  h1 {
+    color: $white;
+    font-family: $primary-font;
+  }
+}

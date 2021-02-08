@@ -6,6 +6,7 @@ import Favorites from "./pages/Favorites";
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
 import CreateUser from "./pages/CreateUser";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/createuser" component={CreateUser} />
           <Route path="/login" component={LogIn} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );
