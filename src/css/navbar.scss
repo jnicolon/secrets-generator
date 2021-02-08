@@ -1,0 +1,21 @@
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+    padding: 10px;
+  }
+
+  li {
+    color: $white;
+    font-family: $primary-font;
+  }
+}

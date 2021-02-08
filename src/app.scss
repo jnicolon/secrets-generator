@@ -1,8 +1,42 @@
+@import "./css//varibable.scss";
+@import "./css//random.scss";
+@import "./css/navbar.scss";
+@import "./css//postcard.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   width: 100vw;
-  height: 100vh;
-  background-image: url(../src/imgs/background.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  background-color: black;
+
+  // background-image: url(../src/imgs/background.jpg);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: unset;
+  }
 }

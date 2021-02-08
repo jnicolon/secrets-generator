@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../imgs/logo/logo.jpg";
 
 function Navbar() {
   return (
-    <div>
+    <div className="navbar-container">
+      <Link to="/">
+        <img className="logo" src={logo} alt="logo" />
+      </Link>
       <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
         <li>
           <Link to="/addsecret">Add a Secret</Link>
         </li>
@@ -16,9 +17,6 @@ function Navbar() {
         </li>
         <li>
           <Link to="/createuser">Create User</Link>
-        </li>
-        <li>
-          <Link to="/login">Log In</Link>
         </li>
       </ul>
     </div>

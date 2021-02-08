@@ -1,0 +1,31 @@
+.postcard-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.postcard-container {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.postcard-vertical {
+  height: 526px;
+  width: 359px;
+}
+
+.postcard-horizontal {
+  width: 526px;
+  height: 359px;
+}
