@@ -1,0 +1,15 @@
+.createUser-input {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  &:focus {
+    outline: none;
+  }
+}
+
+.createUser-error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
