@@ -5,6 +5,7 @@
 @import "./css//postcard.scss";
 @import "./css/addSecret.scss";
 @import "./css/createUser.scss";
+@import "./css/login.scss";
 
 * {
   margin: 0;
@@ -22,11 +23,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: black;
-
-  // background-image: url(../src/imgs/background.jpg);
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
+  position: relative;
 }
 ul {
   margin: 0;

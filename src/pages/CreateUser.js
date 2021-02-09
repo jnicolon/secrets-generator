@@ -31,7 +31,7 @@ function CreateUser() {
           </>
         )}
 
-        <button>Submit</button>
+        <button>Create</button>
       </form>
     </div>
   );
