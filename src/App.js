@@ -13,7 +13,7 @@ function App() {
     <div className="app">
       <Router basename="/">
         <Navbar />
-        <LogIn />
+        {/* <LogIn /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/addsecret" component={AddSecret} />

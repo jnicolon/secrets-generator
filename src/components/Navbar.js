@@ -11,13 +11,19 @@ function Navbar() {
         <img className="logo" src={logo} alt="logo" />
       </Link>
       <ul>
-        <li className={location.pathname === "/addsecret" && "nav-selected"}>
+        <li
+          className={location.pathname === "/addsecret" ? "nav-selected" : ""}
+        >
           <Link to="/addsecret">Add a Secret</Link>
         </li>
-        <li className={location.pathname === "/favorites" && "nav-selected"}>
+        <li
+          className={location.pathname === "/favorites" ? "nav-selected" : ""}
+        >
           <Link to="/favorites">Favorites</Link>
         </li>
-        <li className={location.pathname === "/createuser" && "nav-selected"}>
+        <li
+          className={location.pathname === "/createuser" ? "nav-selected" : ""}
+        >
           <Link to="/createuser">Create User</Link>
         </li>
       </ul>

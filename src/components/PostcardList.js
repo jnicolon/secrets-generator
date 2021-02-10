@@ -7,8 +7,8 @@ function PostcardList() {
   return (
     <ul className="postcard-list-container">
       <li>
-        <Postcard direction={"postcard-horizontal"} text={txt} />
-        <Postcard direction={"postcard-vertical"} text={txt} />
+        <Postcard direction="postcard-horizontal" text={txt} />
+        <Postcard direction="postcard-vertical" text={txt} />
       </li>
     </ul>
   );
