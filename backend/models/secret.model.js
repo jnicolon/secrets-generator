@@ -4,16 +4,12 @@ const Schema = mongoose.Schema;
 
 const secretSchema = new Schema(
   {
-    design: {
-      type: Object,
-      required: true,
-    },
     secret: {
       type: String,
       required: true,
       trim: true,
       minlength: 3,
-      maxlenght:50
+      maxlenght: 50,
     },
   },
   {
