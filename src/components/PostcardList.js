@@ -1,15 +1,18 @@
 import React from "react";
 import Postcard from "./Postcard";
 
-function PostcardList() {
-  const txt = `One time, I was looking at my own butt in the mirror and someone came in and I had to pretend I din't like it.`;
+function PostcardList({ secrets }) {
+  console.log(secrets);
 
   return (
     <ul className="postcard-list-container">
-      <li>
-        <Postcard direction="postcard-horizontal" text={txt} />
-        <Postcard direction="postcard-vertical" text={txt} />
-      </li>
+      {secrets.map((secret) => {
+        return (
+          <li>
+            <Postcard direction="postcard-horizontal" text={secret.secret} />
+          </li>
+        );
+      })}
     </ul>
   );
 }

@@ -6,7 +6,6 @@ import { GetSecrets } from "../redux/actions/secretsActions";
 function Home() {
   const dispatch = useDispatch();
   const secrets = useSelector((state) => state.secrets.secrets);
-  console.log(secrets);
 
   useEffect(() => {
     dispatch(GetSecrets());
