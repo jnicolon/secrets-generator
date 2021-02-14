@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function AddSecret() {
+function AddSecret({ history }) {
   const [secret, setSecret] = useState("");
 
   const handleChange = (e) => {
@@ -12,7 +12,10 @@ function AddSecret() {
     e.preventDefault();
     axios
       .post("http://localhost:5000/secrets/add", { secret })
-      .then(console.log("secret posted"))
+      .then((res) => {
+        console.log("Secret added");
+        history.push("/");
+      })
       .catch((err) => console.log(err));
   };
 
