@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function AddSecret() {
   const [secret, setSecret] = useState("");
@@ -9,7 +10,10 @@ function AddSecret() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(secret);
+    axios
+      .post("http://localhost:5000/secrets/add", { secret })
+      .then(console.log("secret posted"))
+      .catch((err) => console.log(err));
   };
 
   return (
