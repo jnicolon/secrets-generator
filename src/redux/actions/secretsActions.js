@@ -6,7 +6,10 @@ export function GetSecrets() {
     return axios
       .get("http://localhost:5000/secrets/")
       .then((res) => {
-        dispatch({ type: actions.GET_SECRETS, payload: res.data });
+        let tempSecrets = [...res.data];
+        let tempOrderedSecrets = tempSecrets.reverse();
+
+        dispatch({ type: actions.GET_SECRETS, payload: tempOrderedSecrets });
       })
       .catch((err) => {
         console.log(err);

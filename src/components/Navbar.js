@@ -31,9 +31,9 @@ function Navbar() {
         {isLoggedIn ? (
           <li
             onClick={() => {
-              setUserModal(true);
+              setUserModal(!userModal);
             }}
-            style={{ border: "solid 1px white" }}
+            style={{ border: "solid 1px white", cursor: "pointer" }}
           >
             {userModal && (
               <div className="navbar-user-modal">
