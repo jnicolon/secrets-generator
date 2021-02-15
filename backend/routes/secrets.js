@@ -28,21 +28,6 @@ router.route("/:id").get((req, res) => {
     .catch((err) => console.log("Error :" + err));
 });
 
-router.route("/update/:id").post((req, res) => {
-  Secret.findById(req.params.id)
-    .then((secret) => {
-      secret.author = req.body.author;
-      secret.secret = req.body.secret;
-      secret.date = Date.parse(req.body.date);
-
-      secret
-        .save()
-        .then(() => res.json("Secret updated"))
-        .catch((err) => console.log("Error :" + err));
-    })
-    .catch((err) => console.log("Error :" + err));
-});
-
 router.route("/:id").delete((req, res) => {
   Secret.findByIdAndDelete(req.params.id)
     .then(() => res.json("Secret deleted"))

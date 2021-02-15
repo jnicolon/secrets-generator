@@ -36,4 +36,14 @@
 .postcard-text {
   color: black;
   background-color: $white;
+  font-family: $primary-font;
+}
+
+.postcard-trashcan {
+  position: relative;
+  top: -10px;
+  color: white;
+  font-family: $primary-font;
+  margin-bottom: 20px;
+  cursor: pointer;
 }

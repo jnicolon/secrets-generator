@@ -16,3 +16,19 @@ export function GetSecrets() {
       });
   };
 }
+
+export function DeleteSecret(id) {
+  return (dispatch, getState) => {
+    const state = getState();
+    const updatedSecrets = state.secrets.secrets.filter(
+      (secret) => secret._id !== id
+    );
+    return axios
+      .delete(`http://localhost:5000/secrets/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        dispatch({ type: actions.GET_SECRETS, payload: updatedSecrets });
+      })
+      .catch((err) => console.log(err));
+  };
+}
