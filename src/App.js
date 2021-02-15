@@ -1,5 +1,7 @@
 import "./app.scss";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import Navbar from "./components/Navbar";
 import AddSecret from "./pages/AddSecret";
 import UserSecrets from "./pages/UserSecrets";
@@ -9,11 +11,13 @@ import Footer from "./components/Footer";
 import LogIn from "./components/LogIn";
 
 function App() {
+  const signInModal = useSelector((state) => state.users.signInModal);
+
   return (
     <div className="app">
       <Router basename="/">
         <Navbar />
-        {/* <LogIn /> */}
+        {signInModal && <LogIn />}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/addsecret" component={AddSecret} />

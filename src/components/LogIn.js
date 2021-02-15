@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setSignInModal } from "../redux/actions/userActions";
 
 function LogIn() {
   const [userName, setUserName] = useState("");
   const [error, seterror] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleModal = (status) => {
+    dispatch(setSignInModal(status));
+  };
 
   const handleChange = (e) => {
     setUserName(e.target.value);
@@ -18,20 +25,25 @@ function LogIn() {
     <>
       <div className="modal-bg"></div>
       <div className="login-container">
-        <h2 className="login-title">
-          You need a user to add a secret or see your favorites
-        </h2>
+        <div onClick={() => handleModal(false)} className="close-modal">
+          X
+        </div>
+        <h2 className="login-title">Sign In</h2>
         <form onSubmit={handleSubmit} className="login-contaienr">
           <label>If you already have a user enter it here:</label>
           <input onChange={handleChange} type="text"></input>
           {error && (
             <p className="createUser-error">That user doesn't exist!</p>
           )}
-          <button>Log in</button>
+          <button>Sign in</button>
         </form>
         <p>
           Otherwise
-          <Link className="login-user-btn" to="/createuser">
+          <Link
+            onClick={() => handleModal(false)}
+            className="login-user-btn"
+            to="/createuser"
+          >
             {" "}
             create a user
           </Link>

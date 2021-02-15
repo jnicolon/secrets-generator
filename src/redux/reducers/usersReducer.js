@@ -3,6 +3,7 @@ import * as actions from "../actions/.";
 const defaultState = {
   currentUser: "",
   isLoggedIn: false,
+  signInModal: false,
 };
 
 function usersReducer(state = defaultState, action) {
@@ -12,6 +13,11 @@ function usersReducer(state = defaultState, action) {
         ...state,
         currentUser: action.payload.userName,
         isLoggedIn: action.payload.isLoggedIn,
+      };
+    case actions.SET_SIGN_IN_MODAL:
+      return {
+        ...state,
+        signInModal: action.payload,
       };
     default:
       return state;

@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setSignInModal } from "../redux/actions/userActions";
 
 function AddSecret({ history }) {
   const [secret, setSecret] = useState("");
   const user = useSelector((state) => state.users.currentUser);
   const isLoggedIn = useSelector((state) => state.users.isLoggedIn);
+  const dispatch = useDispatch();
+
+  const handleModal = (status) => {
+    dispatch(setSignInModal(true));
+  };
 
   const handleChange = (e) => {
     setSecret(e.target.value);
@@ -47,7 +53,7 @@ function AddSecret({ history }) {
           <p className="addSecret-form-info">
             If you want to keep track of your secrets
             <br />
-            <span> SIGN IN </span>
+            <span onClick={() => handleModal(true)}> SIGN IN </span>
             or
             <Link to="/createuser">
               <span> CREATE A USER </span>

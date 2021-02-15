@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 function Navbar() {
   const location = useLocation();
   const isLoggedIn = useSelector(({ users }) => users.isLoggedIn);
+  const currentUser = useSelector(({ users }) => users.currentUser);
 
   return (
     <div className="navbar-container">
@@ -18,22 +19,18 @@ function Navbar() {
         >
           <Link to="/addsecret">Add a Secret</Link>
         </li>
-        {isLoggedIn ? null : (
+        {isLoggedIn ? (
+          <li
+            style={{ border: "solid 1px white" }}
+          >{`Hello ${currentUser}`}</li>
+        ) : null}
+        {isLoggedIn ? (
           <li
             className={location.pathname === "/favorites" ? "nav-selected" : ""}
           >
-            <Link to="/favorites">Favorites</Link>
+            <Link to="/usersecrets">Your Secrets</Link>
           </li>
-        )}
-        {isLoggedIn ? null : (
-          <li
-            className={
-              location.pathname === "/createuser" ? "nav-selected" : ""
-            }
-          >
-            <Link to="/createuser">Create User</Link>
-          </li>
-        )}
+        ) : null}
       </ul>
     </div>
   );
