@@ -19,7 +19,7 @@ router.route("/add").post((req, res) => {
       res.json("User added!");
     })
     .catch((err) => {
-      res.status(400).json("Error: " + err);
+      res.status(400).json("Error: " + err.code);
     });
 });
 

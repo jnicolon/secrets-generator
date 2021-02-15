@@ -11,6 +11,7 @@ function CreateUser() {
 
   const handleChange = (e) => {
     setUserName(e.target.value);
+    setError("");
   };
 
   const handleSubmit = (e) => {
@@ -22,14 +23,12 @@ function CreateUser() {
         setUserCreated(true);
       })
       .catch((err) => {
-        if (
-          err.response.data ===
-          "Error: MongoError: E11000 duplicate key error collection: secretsgenerator.users index: username_1 dup key: { username: null }"
-        ) {
+        if (err.response.data === "Error: 11000") {
           setError("User already exists");
         } else {
           setError("User must be at least 3 characters long");
         }
+        console.log(err.response);
       });
   };
 
