@@ -2,7 +2,6 @@ import * as actions from "../actions/index";
 
 const initialState = {
   secrets: [],
-  test: "",
 };
 
 function secretsReducers(state = initialState, action) {
@@ -11,11 +10,6 @@ function secretsReducers(state = initialState, action) {
       return {
         ...state,
         secrets: action.payload,
-      };
-    case actions.TEST:
-      return {
-        ...state,
-        test: action.payload,
       };
     default:
       return state;

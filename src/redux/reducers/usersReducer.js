@@ -1,15 +1,17 @@
 import * as actions from "../actions/.";
 
 const defaultState = {
-  currentUser: {},
+  currentUser: "",
+  isLoggedIn: false,
 };
 
 function usersReducer(state = defaultState, action) {
   switch (action.type) {
-    case "SET_USER":
+    case actions.SET_CURRENT_USER:
       return {
         ...state,
-        currentUser: action.payload,
+        currentUser: action.payload.userName,
+        isLoggedIn: action.payload.isLoggedIn,
       };
     default:
       return state;

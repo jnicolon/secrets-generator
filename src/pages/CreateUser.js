@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import { setCurrentUser } from "../redux/actions/userActions";
+import { useDispatch } from "react-redux";
+import axios from "axios";
 
 function CreateUser() {
   const [userName, setUserName] = useState("");
   const [error, seterror] = useState(false);
+  const [userCreated, setUserCreated] = useState(false);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setUserName(e.target.value);
@@ -10,31 +15,56 @@ function CreateUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userName);
+    axios
+      .post(`http://localhost:5000/users/add`, { username: userName })
+      .then(() => {
+        dispatch(setCurrentUser(userName, true));
+        setUserCreated(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        seterror(true);
+      });
   };
 
-  return (
-    <div className="addSecret-container">
-      <form onSubmit={handleSubmit} className="addSecret-form">
-        <label> Enter your username.</label>
-        <input
-          className="createUser-input"
-          type="text"
-          onChange={handleChange}
-        ></input>
-        {error && (
-          <>
-            <p className="createUser-error">That user already exists!</p>
-            <p className="createUser-error">
-              User must be at least 3 characters long!
-            </p>
-          </>
-        )}
+  if (!userCreated) {
+    return (
+      <div className="addSecret-container">
+        <form onSubmit={handleSubmit} className="addSecret-form">
+          <label> Enter your username.</label>
+          <input
+            className="createUser-input"
+            type="text"
+            onChange={handleChange}
+          ></input>
+          {error && (
+            <>
+              <p className="createUser-error">That user already exists!</p>
+              <p className="createUser-error">
+                User must be at least 3 characters long!
+              </p>
+            </>
+          )}
 
-        <button>Create</button>
-      </form>
-    </div>
-  );
+          <button>Create</button>
+          <br />
+          <p>
+            If you already have a user
+            <span> SIGN IN</span>
+          </p>
+        </form>
+      </div>
+    );
+  } else {
+    return (
+      <div className="addSecret-container">
+        <div className="add-secret-form">
+          <br /> <br />
+          <h4>User succesfully created.</h4>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default CreateUser;

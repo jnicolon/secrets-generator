@@ -1,9 +1,11 @@
 import * as actions from ".";
 
-// function setCurrentUser(userName){
-//     return (dispatch)=>{
-//         return dispatch =>{
-
-//         }
-//     }
-// }
+export function setCurrentUser(userName, isLoggedIn) {
+  return (dispatch) => {
+    const user = {
+      isLoggedIn: isLoggedIn,
+      userName,
+    };
+    return dispatch({ type: actions.SET_CURRENT_USER, payload: user });
+  };
+}

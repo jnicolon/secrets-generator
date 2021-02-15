@@ -13,7 +13,3 @@ export function GetSecrets() {
       });
   };
 }
-
-export function Test() {
-  return { type: actions.TEST, payload: "test-succsseful" };
-}
