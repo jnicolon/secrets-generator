@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function AddSecret({ history }) {
   const [secret, setSecret] = useState("");
+  const user = useSelector((state) => state.users.currentUser);
 
   const handleChange = (e) => {
     setSecret(e.target.value);
@@ -10,8 +12,14 @@ function AddSecret({ history }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let userName;
+    if (user === "") {
+      userName = "Anonymous";
+    } else {
+      userName = user;
+    }
     axios
-      .post("http://localhost:5000/secrets/add", { secret })
+      .post("http://localhost:5000/secrets/add", { secret, userName })
       .then((res) => {
         console.log("Secret added");
         history.push("/");
@@ -32,6 +40,14 @@ function AddSecret({ history }) {
           name={secret}
         />
         <button>Submit</button>
+        <br />
+        <p className="addSecret-form-info">
+          If you want to keep track of your secrets
+          <br />
+          <span> SIGN IN </span>
+          or
+          <span> CREATE A USER </span>
+        </p>
       </form>
     </div>
   );

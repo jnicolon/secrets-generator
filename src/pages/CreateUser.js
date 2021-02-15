@@ -5,7 +5,7 @@ import axios from "axios";
 
 function CreateUser() {
   const [userName, setUserName] = useState("");
-  const [error, seterror] = useState(false);
+  const [error, setError] = useState("");
   const [userCreated, setUserCreated] = useState(false);
   const dispatch = useDispatch();
 
@@ -16,14 +16,20 @@ function CreateUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/users/add`, { username: userName })
+      .post(`http://localhost:5000/users/add`, { userName })
       .then(() => {
         dispatch(setCurrentUser(userName, true));
         setUserCreated(true);
       })
       .catch((err) => {
-        console.log(err);
-        seterror(true);
+        if (
+          err.response.data ===
+          "Error: MongoError: E11000 duplicate key error collection: secretsgenerator.users index: username_1 dup key: { username: null }"
+        ) {
+          setError("User already exists");
+        } else {
+          setError("User must be at least 3 characters long");
+        }
       });
   };
 
@@ -37,12 +43,9 @@ function CreateUser() {
             type="text"
             onChange={handleChange}
           ></input>
-          {error && (
+          {error !== "" && (
             <>
-              <p className="createUser-error">That user already exists!</p>
-              <p className="createUser-error">
-                User must be at least 3 characters long!
-              </p>
+              <p className="createUser-error">{error}</p>
             </>
           )}
 

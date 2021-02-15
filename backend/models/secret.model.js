@@ -11,6 +11,13 @@ const secretSchema = new Schema(
       minlength: 3,
       maxlenght: 50,
     },
+    userName: {
+      type: String,
+      required: false,
+      trim: true,
+      minlength: 3,
+      maxlenght: 10,
+    },
   },
   {
     timestamps: true,
