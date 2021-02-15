@@ -15,7 +15,6 @@
 .postcard-container {
   margin-top: 1em;
   margin-bottom: 1.5em;
-  background-color: white;
   text-align: center;
   padding: 20px;
   display: flex;
@@ -28,5 +27,5 @@
 
 .postcard-text {
   color: black;
-  background-color: white;
+  background-color: $white;
 }
