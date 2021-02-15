@@ -21,8 +21,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.postcard-horizontal {
   width: 526px;
   height: 359px;
+}
+
+.postcard-vertical {
+  height: 526px;
+  width: 359px;
 }
 
 .postcard-text {
