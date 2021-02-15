@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { setCurrentUser } from "../redux/actions/userActions";
+import { setCurrentUser, setSignInModal } from "../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
@@ -52,7 +52,13 @@ function CreateUser() {
           <br />
           <p>
             If you already have a user
-            <span> SIGN IN</span>
+            <span
+              style={{ cursor: "pointer" }}
+              onClick={() => dispatch(setSignInModal(true))}
+            >
+              {" "}
+              SIGN IN
+            </span>
           </p>
         </form>
       </div>

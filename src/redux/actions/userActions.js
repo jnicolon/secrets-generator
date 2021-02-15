@@ -1,3 +1,4 @@
+import axios from "axios";
 import * as actions from ".";
 
 export function setCurrentUser(userName, isLoggedIn) {
@@ -13,5 +14,34 @@ export function setCurrentUser(userName, isLoggedIn) {
 export function setSignInModal(status) {
   return (dispatch) => {
     return dispatch({ type: actions.SET_SIGN_IN_MODAL, payload: status });
+  };
+}
+
+export function signIn(userName) {
+  return (dispatch) => {
+    return axios
+      .get("http://localhost:5000/users")
+      .then((res) => {
+        let filteredUser = res.data.filter(
+          (user) => user.userName === userName
+        );
+        if (filteredUser.length === 0) {
+          dispatch({
+            type: actions.SIGN_IN_USER,
+            payload: {
+              userName: "",
+              isLoggedIn: false,
+              logInError: "User doesn't exist.",
+            },
+          });
+        } else {
+          dispatch({
+            type: actions.SIGN_IN_USER,
+            payload: { userName, isLoggedIn: true },
+            logInError: "",
+          });
+        }
+      })
+      .catch((err) => console.log(err));
   };
 }

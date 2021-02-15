@@ -4,6 +4,7 @@ const defaultState = {
   currentUser: "",
   isLoggedIn: false,
   signInModal: false,
+  logInError: "",
 };
 
 function usersReducer(state = defaultState, action) {
@@ -18,6 +19,13 @@ function usersReducer(state = defaultState, action) {
       return {
         ...state,
         signInModal: action.payload,
+      };
+    case actions.SIGN_IN_USER:
+      return {
+        ...state,
+        currentUser: action.payload.userName,
+        isLoggedIn: action.payload.isLoggedIn,
+        logInError: action.payload.logInError,
       };
     default:
       return state;
