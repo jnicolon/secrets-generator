@@ -9,11 +9,10 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const author = req.body.author;
+  const userName = req.body.userName;
   const secret = req.body.secret;
-  const date = Date.parse(req.body.date);
 
-  const newSecret = new Secret({ author, secret, date });
+  const newSecret = new Secret({ userName, secret });
 
   newSecret
     .save()
