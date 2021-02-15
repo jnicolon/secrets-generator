@@ -2,7 +2,7 @@ import "./app.scss";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AddSecret from "./pages/AddSecret";
-import Favorites from "./pages/Favorites";
+import UserSecrets from "./pages/UserSecrets";
 import Home from "./pages/Home";
 import CreateUser from "./pages/CreateUser";
 import Footer from "./components/Footer";
@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/addsecret" component={AddSecret} />
-          <Route path="/favorites" component={Favorites} />
+          <Route path="/usersecrets" component={UserSecrets} />
           <Route path="/createuser" component={CreateUser} />
         </Switch>
         <Footer />

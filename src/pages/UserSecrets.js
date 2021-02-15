@@ -1,8 +1,8 @@
 import React from "react";
 import PostcardList from "../components/PostcardList";
 
-function Favorites() {
+function UserSecrets() {
   return <PostcardList />;
 }
 
-export default Favorites;
+export default UserSecrets;
