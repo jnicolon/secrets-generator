@@ -4,11 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "start": "node server.js"
   },
-  "homepage": "https://jnicolon.github.io/secrets-generator",
   "keywords": [],
   "author": "",
   "license": "ISC",
