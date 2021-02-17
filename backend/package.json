@@ -8,7 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://jnicolon.github.io/secrets-generator",
+  "homepage": "https://jnicolon.github.io/secrets-generator",
   "keywords": [],
   "author": "",
   "license": "ISC",
