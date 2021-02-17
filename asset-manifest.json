@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/secrets-generator/static/css/main.27416b8e.chunk.css",
+    "main.js": "/secrets-generator/static/js/main.8aedd02f.chunk.js",
+    "main.js.map": "/secrets-generator/static/js/main.8aedd02f.chunk.js.map",
+    "runtime-main.js": "/secrets-generator/static/js/runtime-main.5a36552d.js",
+    "runtime-main.js.map": "/secrets-generator/static/js/runtime-main.5a36552d.js.map",
+    "static/js/2.c872a413.chunk.js": "/secrets-generator/static/js/2.c872a413.chunk.js",
+    "static/js/2.c872a413.chunk.js.map": "/secrets-generator/static/js/2.c872a413.chunk.js.map",
+    "static/js/3.6ea72075.chunk.js": "/secrets-generator/static/js/3.6ea72075.chunk.js",
+    "static/js/3.6ea72075.chunk.js.map": "/secrets-generator/static/js/3.6ea72075.chunk.js.map",
+    "index.html": "/secrets-generator/index.html",
+    "static/css/main.27416b8e.chunk.css.map": "/secrets-generator/static/css/main.27416b8e.chunk.css.map",
+    "static/js/2.c872a413.chunk.js.LICENSE.txt": "/secrets-generator/static/js/2.c872a413.chunk.js.LICENSE.txt",
+    "static/media/logo.62b43471.jpg": "/secrets-generator/static/media/logo.62b43471.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a36552d.js",
+    "static/js/2.c872a413.chunk.js",
+    "static/css/main.27416b8e.chunk.css",
+    "static/js/main.8aedd02f.chunk.js"
+  ]
+}
