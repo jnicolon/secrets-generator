@@ -27,7 +27,10 @@ function AddSecret({ history }) {
       userName = user;
     }
     axios
-      .post("https://secrets-generator.herokuapp.com/add", { secret, userName })
+      .post("https://secrets-generator.herokuapp.com/secrets/add", {
+        secret,
+        userName,
+      })
       .then((res) => {
         console.log("Secret added");
         history.push("/");
