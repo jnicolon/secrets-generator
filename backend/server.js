@@ -27,6 +27,10 @@ connection.once("open", () => {
 app.use("/secrets", secretsRouter);
 app.use("/users", usersRouter);
 
+app.get("/", (req, res) => {
+  res.send("Hello to Secret Generator");
+});
+
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
