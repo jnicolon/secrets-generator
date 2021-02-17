@@ -4,7 +4,7 @@ import axios from "axios";
 export function GetSecrets() {
   return (dispatch) => {
     return axios
-      .get("http://localhost:5000/secrets/")
+      .get("https://secrets-generator.herokuapp.com/secrets/")
       .then((res) => {
         let tempSecrets = [...res.data];
         let tempOrderedSecrets = tempSecrets.reverse();
@@ -24,7 +24,7 @@ export function DeleteSecret(id) {
       (secret) => secret._id !== id
     );
     return axios
-      .delete(`http://localhost:5000/secrets/${id}`)
+      .delete(`https://secrets-generator.herokuapp.com/secrets/${id}`)
       .then((res) => {
         console.log(res.data);
         dispatch({ type: actions.GET_SECRETS, payload: updatedSecrets });

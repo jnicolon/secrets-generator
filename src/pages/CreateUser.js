@@ -17,7 +17,7 @@ function CreateUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/users/add`, { userName })
+      .post(`https://secrets-generator.herokuapp.com/add`, { userName })
       .then(() => {
         dispatch(setCurrentUser(userName, true));
         setUserCreated(true);
